@@ -1,0 +1,9 @@
+{
+  "College Gate": ["Anviksha", "Temple"],
+  "Anviksha": ["College Gate", "SOT", "Temple"],
+  "SOT": ["Anviksha", "Aangnva Ground", "SOM Building"],
+  "Temple": ["College Gate", "Anviksha", "SOM Building"],
+  "Aangnva Ground": ["SOT", "Hostel"],
+  "Hostel": ["Aangnva Ground"],
+  "SOM Building": ["Temple", "SOT"]
+}

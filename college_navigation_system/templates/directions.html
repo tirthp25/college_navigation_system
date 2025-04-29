@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Path Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        #map-container {
+            position: relative;
+            width: fit-content;
+        }
+        #map-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+        }
+        #map-canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shortest Path:</h1>
+    <ul>
+        {% for node in path %}
+            <li>{{ node }}</li>
+        {% endfor %}
+    </ul>
+
+    <div id="map-container">
+        <img id="map-image" src="{{ url_for('static', filename='image/campus_map.png') }}" />
+        <canvas id="map-canvas"></canvas>
+        
+    </div>
+
+    <script>
+        const path = JSON.parse('{{ path | tojson | safe }}');
+    </script>
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>

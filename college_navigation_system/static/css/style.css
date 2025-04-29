@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.map-container {
+    position: relative;
+    width: 1024px; /* Match your map image width */
+    height: 768px; /* Match your map image height */
+    background-image: url("/static/image/campus_map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border: 2px solid #333;
+}
+

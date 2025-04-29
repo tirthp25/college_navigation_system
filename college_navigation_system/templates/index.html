@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College Navigation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>College Navigation System</h1>
+
+        <form action="/find_path" method="post">
+            <label for="start">Start Location:</label>
+            <select name="start" id="start" required>
+                <option value="" disabled selected>Select start</option>
+                {% for place in places %}
+                    <option value="{{ place }}">{{ place }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="end">Destination:</label>
+            <select name="end" id="end" required>
+                <option value="" disabled selected>Select destination</option>
+                {% for place in places %}
+                    <option value="{{ place }}">{{ place }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Find Path</button>
+        </form>
+    </div>
+    
+</body>
+</html>
